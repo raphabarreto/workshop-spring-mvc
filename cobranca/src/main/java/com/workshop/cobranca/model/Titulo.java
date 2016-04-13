@@ -14,6 +14,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 public class Titulo {
@@ -25,12 +27,14 @@ public class Titulo {
 	private String descricao;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataVencimento;
 
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 
-	@Enumerated(EnumType.ORDINAL)
-	private StatusTitulo titulo;
+	@Enumerated(EnumType.STRING)
+	private StatusTitulo status;
 
 	public Long getId() {
 		return id;
@@ -64,12 +68,12 @@ public class Titulo {
 		this.valor = valor;
 	}
 
-	public StatusTitulo getTitulo() {
-		return titulo;
+	public StatusTitulo getStatus() {
+		return status;
 	}
 
-	public void setTitulo(StatusTitulo titulo) {
-		this.titulo = titulo;
+	public void setStatus(StatusTitulo status) {
+		this.status = status;
 	}
 
 	@Override

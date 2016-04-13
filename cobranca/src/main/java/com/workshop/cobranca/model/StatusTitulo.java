@@ -3,7 +3,7 @@ package com.workshop.cobranca.model;
 public enum StatusTitulo {
 
 	PENDENTE("Pendente"),
-	RECEBIBO("Recebido");
+	RECEBIDO("Recebido");
 	
 	private String descricao;
 
@@ -13,9 +13,5 @@ public enum StatusTitulo {
 
 	public String getDescricao() {
 		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 }
