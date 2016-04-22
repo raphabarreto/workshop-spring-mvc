@@ -35,12 +35,15 @@
 						<td class="text-center" th:text="${titulo.id}">1</td>
 						<td th:text="${titulo.descricao}"></td>
 						<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
-						<td class="text-right" th:text="${{titulo.valor}}"></td>
+						<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
 						<td class="text-center"><span class="label"
 							th:text="${titulo.status.descricao}"
 							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 						</td>
 						<td class="text-center">
+							<a class="btn btn-link btn-xs" th:href="@{/titulos/{id} (id=${titulo.id})}">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</a>
 						</td>
 					</tr>
 					<tr>
