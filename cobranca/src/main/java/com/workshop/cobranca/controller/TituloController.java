@@ -17,7 +17,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.workshop.cobranca.model.StatusTitulo;
 import com.workshop.cobranca.model.Titulo;
-import com.workshop.cobranca.repository.Titulos;
 import com.workshop.cobranca.repository.filter.TituloFilter;
 import com.workshop.cobranca.service.CadastroTituloService;
 
