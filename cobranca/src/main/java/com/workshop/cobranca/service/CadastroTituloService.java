@@ -30,6 +30,6 @@ public class CadastroTituloService {
 		Titulo titulo = titulos.findOne(id);
 		titulo.setStatus(StatusTitulo.RECEBIDO);
 		titulos.save(titulo);
-		return StatusTitulo.RECEBIDO.getDescricao();
+		return titulo.getStatus().getDescricao();
 	}
 }
