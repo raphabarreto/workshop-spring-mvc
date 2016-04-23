@@ -14,8 +14,7 @@
 		<div class="panel-heading">
 			<div class="clearfix">
 				<h1 class="panel-title aw-titulo-panel">Pesquisa de títulos</h1>
-				<a class="btn btn-link aw-link-panel" href="/titulos/novo">Novo
-					título</a>
+				<a class="btn btn-link aw-link-panel" href="/titulos/novo">Novo	título</a>
 			</div>
 		</div>
 
@@ -50,6 +49,11 @@
 								th:attr="data-id=${titulo.id}, data-descricao=${titulo.descricao}"
 								title="Excluir" rel="tooltip" data-placement="top">
 								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+							<a class="btn btn-link btn-xs js-atualizar-status" th:if="${titulo.pendente}" 
+								th:href="@{/titulos/{id}/receber(id=${titulo.id})}"
+								title="Receber" rel="tooltip" data-placement="top">
+								<span class="glyphicon glyphicon-check"></span>
 							</a>
 						</td>
 					</tr>
